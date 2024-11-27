@@ -8,11 +8,7 @@ RUN apt update && apt install -y curl tar xz-utils
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /bin
 
-RUN echo 'install blesh' && \
-    cd /opt && \
-    curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf - && \
-    mv /opt/ble-nightly /opt/blesh && \
-    mkdir /opt/blesh/state.d && chmod 777 /opt/blesh/state.d && \
-    echo 'done'
+RUN echo 'install bash-preexec' && \
+    curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o /opt/bash-preexec.sh
 
 ENV UV_PROJECT_ENVIRONMENT /tmp/venv
