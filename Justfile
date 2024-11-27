@@ -5,8 +5,9 @@ up:
 	devcontainer up \
 		--mount "type=bind,source=$HOME/.config/nvim,target=/home/${USER}/.config/nvim" \
 		--mount "type=bind,source=$HOME/.gitconfig,target=/home/${USER}/.gitconfig" \
-		--mount "type=bind,source=$HOME/.local/state/blesh,target=/home/${USER}/.local/state/blesh" \
+		--mount "type=bind,source=$HOME/.local/state,target=/home/${USER}/.local/state" \
 		--mount "type=bind,source=$HOME/.local/share/atuin,target=/home/${USER}/.local/share/atuin" \
+		--mount "type=bind,source=$HOME/.local/share/nvim,target=/home/${USER}/.local/share/nvim" \
 		--mount type=bind,source=$SSH_AUTH_SOCK,target=/ssh-agent \
 		--workspace-folder . --remove-existing-container true
 
